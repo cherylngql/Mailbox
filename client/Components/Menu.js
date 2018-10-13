@@ -5,7 +5,7 @@ import Folders from './Folders'
 const Menu = () =>  {
   return (
     <div id="menu">
-      <div className="default-folders">
+      <div id="default-folders">
         <DefaultFolder title={'Inbox'}/>
         <DefaultFolder title={'VIP'}/>
         <DefaultFolder title={'Drafts'}/>
