@@ -1,20 +1,25 @@
 import React from 'react'
+import {connect} from 'react-redux';
 import Toolbar from './Toolbar'
 import Menu from './Menu'
 import MailBox from './MailBox'
 import Mail from './Mail'
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
       <Toolbar/>
       <div id="three-panel">
         <Menu/>
-        <MailBox/>
+        <MailBox folder={props.folder}/>
         <Mail/>
       </div>
     </div>
   )
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  folder: state.selectedFolder
+});
+
+export default connect(mapStateToProps)(App)

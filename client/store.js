@@ -5,7 +5,7 @@ const SELECT_FOLDER = 'SELECT_FOLDER';
 const SELECT_MAIL = 'SELECT_MAIL';
 
 const initialState = {
-  selectedFolder: '',
+  selectedFolder: null,
   selectedMail: null
 };
 
