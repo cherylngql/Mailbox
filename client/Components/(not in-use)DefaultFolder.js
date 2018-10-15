@@ -8,6 +8,7 @@ class DefaultFolder extends Component {
   }
 
   handleClick(event, folder) {
+    console.log('HEY')
     const selectedFolder = document.getElementById('default-folders').querySelector('.selected');
     if (selectedFolder) {
       selectedFolder.classList.remove('selected');

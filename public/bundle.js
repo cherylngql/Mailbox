@@ -127,10 +127,10 @@ var mapStateToProps = function mapStateToProps(state) {
 
 /***/ }),
 
-/***/ "./client/Components/DefaultFolder.js":
-/*!********************************************!*\
-  !*** ./client/Components/DefaultFolder.js ***!
-  \********************************************/
+/***/ "./client/Components/Folder.js":
+/*!*************************************!*\
+  !*** ./client/Components/Folder.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -139,6 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store */ "./client/store.js");
+/* harmony import */ var _InputFolder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InputFolder */ "./client/Components/InputFolder.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -160,25 +161,26 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-var DefaultFolder =
+
+var Folder =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(DefaultFolder, _Component);
+  _inherits(Folder, _Component);
 
-  function DefaultFolder(props) {
+  function Folder(props) {
     var _this;
 
-    _classCallCheck(this, DefaultFolder);
+    _classCallCheck(this, Folder);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(DefaultFolder).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Folder).call(this, props));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
-  _createClass(DefaultFolder, [{
+  _createClass(Folder, [{
     key: "handleClick",
     value: function handleClick(event, folder) {
-      var selectedFolder = document.getElementById('default-folders').querySelector('.selected');
+      var selectedFolder = document.getElementById('menu').querySelector('.selected');
 
       if (selectedFolder) {
         selectedFolder.classList.remove('selected');
@@ -202,111 +204,12 @@ function (_Component) {
         onClick: function onClick(event) {
           return _this2.handleClick(event, _this2.props.title);
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, !this.props.addedFolder ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "folder-name"
-      }, this.props.title));
-    }
-  }]);
-
-  return DefaultFolder;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (DefaultFolder);
-
-/***/ }),
-
-/***/ "./client/Components/Folder.js":
-/*!*************************************!*\
-  !*** ./client/Components/Folder.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-
-
-var Folder =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Folder, _Component);
-
-  function Folder(props) {
-    var _this;
-
-    _classCallCheck(this, Folder);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Folder).call(this, props));
-    _this.state = {
-      name: props.title
-    };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.setName = _this.setName.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    return _this;
-  }
-
-  _createClass(Folder, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var input = document.getElementById('title-input');
-      input.addEventListener('keyup', function (event) {
-        if (event.which == 13) {
-          input.blur();
-        }
-      });
-    }
-  }, {
-    key: "handleChange",
-    value: function handleChange(event) {
-      this.setState({
-        name: event.target.value
-      });
-    }
-  }, {
-    key: "setName",
-    value: function setName(event) {
-      var parent = event.target.parentElement;
-      var folderName = document.createTextNode(this.state.name);
-      event.target.remove();
-      parent.append(folderName);
-      this.setState({
-        name: ''
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "folder"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "folder-name"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "title-input",
-        value: this.state.name,
-        onChange: this.handleChange,
-        onBlur: this.setName,
-        autoFocus: true
-      })));
+      }, this.props.title) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InputFolder__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: this.props.title,
+        addedFolder: this.props.addedFolder
+      }));
     }
   }]);
 
@@ -328,16 +231,14 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Folder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Folder */ "./client/Components/Folder.js");
+/* harmony import */ var _Folder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Folder */ "./client/Components/Folder.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -358,6 +259,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+
 var Folders =
 /*#__PURE__*/
 function (_Component) {
@@ -371,21 +273,88 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Folders).call(this));
     _this.state = {
       id: 1,
-      children: []
+      children: [],
+      addingFolder: false
     };
     _this.addFolder = _this.addFolder.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.addedFolder = _this.addedFolder.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(Folders, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee() {
+        var response;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/folders');
+
+              case 2:
+                response = _context.sent;
+                this.setState({
+                  children: response.data.slice(7),
+                  id: response.data.length - 7 + 1
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      };
+    }()
+  }, {
     key: "addFolder",
     value: function addFolder() {
       this.setState({
-        id: this.state.id + 1,
-        children: _toConsumableArray(this.state.children).concat(["Folder ".concat(this.state.id)])
+        addingFolder: true
       });
-      console.log('clicked');
     }
+  }, {
+    key: "addedFolder",
+    value: function () {
+      var _addedFolder = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2() {
+        var response;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/folders');
+
+              case 2:
+                response = _context2.sent;
+                this.setState({
+                  children: response.data.slice(7),
+                  id: response.data.length - 7 + 1,
+                  addingFolder: false
+                });
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      return function addedFolder() {
+        return _addedFolder.apply(this, arguments);
+      };
+    }()
   }, {
     key: "render",
     value: function render() {
@@ -402,11 +371,15 @@ function (_Component) {
       }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "named-folder-list"
       }, this.state.children.map(function (child) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: child,
-          title: child
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          key: child.id,
+          title: child.name
         });
-      })));
+      }), this.state.addingFolder ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        key: "Folder ".concat(this.state.id),
+        title: "Folder ".concat(this.state.id),
+        addedFolder: this.addedFolder
+      }) : null));
     }
   }]);
 
@@ -414,6 +387,141 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Folders);
+
+/***/ }),
+
+/***/ "./client/Components/InputFolder.js":
+/*!******************************************!*\
+  !*** ./client/Components/InputFolder.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var InputFolder =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(InputFolder, _Component);
+
+  function InputFolder(props) {
+    var _this;
+
+    _classCallCheck(this, InputFolder);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(InputFolder).call(this, props));
+    _this.state = {
+      name: props.title
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.createFolder = _this.createFolder.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(InputFolder, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var input = document.getElementById('title-input');
+      input.addEventListener('keyup', function (event) {
+        if (event.which == 13) {
+          input.blur();
+        }
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({
+        name: event.target.value
+      });
+    }
+  }, {
+    key: "createFolder",
+    value: function () {
+      var _createFolder = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(event) {
+        var parent, folderName, response;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                parent = event.target.parentElement;
+                folderName = document.createTextNode(this.state.name);
+                event.target.remove();
+                parent.append(folderName);
+                _context.next = 6;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/folders', {
+                  name: this.state.name
+                });
+
+              case 6:
+                response = _context.sent;
+                this.setState({
+                  name: ''
+                });
+                this.props.addedFolder();
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function createFolder(_x) {
+        return _createFolder.apply(this, arguments);
+      };
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "folder-name"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "title-input",
+        value: this.state.name,
+        onChange: this.handleChange,
+        onBlur: this.createFolder,
+        autoFocus: true
+      }));
+    }
+  }]);
+
+  return InputFolder;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (InputFolder);
 
 /***/ }),
 
@@ -506,23 +614,21 @@ function (_Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log(this.props.folder);
-
                 if (!this.props.folder) {
-                  _context.next = 6;
+                  _context.next = 5;
                   break;
                 }
 
-                _context.next = 4;
+                _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/folders/".concat(this.props.folder));
 
-              case 4:
+              case 3:
                 response = _context.sent;
                 this.setState({
                   mails: response.data.mails
                 });
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -572,16 +678,45 @@ function (_Component) {
       };
     }()
   }, {
+    key: "getSender",
+    value: function getSender(senderEmail) {
+      var sender = senderEmail.slice(0, senderEmail.indexOf('@'));
+      return sender[0].toUpperCase() + sender.slice(1);
+    }
+  }, {
+    key: "getDate",
+    value: function getDate(time) {
+      return time.slice(0, time.indexOf('T'));
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mailbox"
       }, this.props.folder && this.state.mails.length ? this.state.mails.map(function (mail) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "mail-summary",
+          className: "single-mail",
           key: mail.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, mail.subject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, mail.content));
-      }) : !this.props.folder ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Select a folder to view mails") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This folder is currently empty"));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "left-mail"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "right-mail"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sender"
+        }, _this2.getSender(mail.sender), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "date"
+        }, _this2.getDate(mail.createdAt))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "subject"
+        }, mail.subject), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "summary"
+        }, mail.content)));
+      }) : !this.props.folder ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "message"
+      }, "Select a folder to view mails") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "message"
+      }, "This folder is currently empty"));
     }
   }]);
 
@@ -603,7 +738,7 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _DefaultFolder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DefaultFolder */ "./client/Components/DefaultFolder.js");
+/* harmony import */ var _Folder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Folder */ "./client/Components/Folder.js");
 /* harmony import */ var _Folders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Folders */ "./client/Components/Folders.js");
 
 
@@ -614,19 +749,19 @@ var Menu = function Menu() {
     id: "menu"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "default-folders"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'Inbox'
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'VIP'
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'Drafts'
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'Sent'
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'Archive'
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'Trash'
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DefaultFolder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: 'Junk'
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folders__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
